@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded',function(){
             Medico[e.target.name] = e.target.value;
             return;
         };
-        mostrarAlerta2(`por favor selecciona una prevision válida, seleccionaste: ${e.target.value}`, e.target.parentElement);
+        mostrarAlerta2(`por favor rellene el campo${e.target.value}`, e.target.parentElement);
         
 
     };
@@ -218,7 +218,6 @@ document.addEventListener('DOMContentLoaded',function(){
 
     function validarAlergia(e){
         if(e.target.value ==='No'){
-                console.log('toma')
                 
                 Medico[e.target.name] = 'No alergico';
                 confirmarMedico();      
@@ -248,7 +247,9 @@ document.addEventListener('DOMContentLoaded',function(){
             return;
         }
     Medico[e.target.name] = e.target.value.trim().toLowerCase();
-    console.log(e.target.value);  
+    console.log(e.target.value);
+    confirmarMedico();      
+
     };
 
 
@@ -274,21 +275,21 @@ document.addEventListener('DOMContentLoaded',function(){
     
 
     //Funcion validarEspecialidad
-    function validarEspecialidad(e){
-        // Validación específica para especialidad (select)  
-        if(e.target.value ===''){
-                mostrarAlerta2(`por favor selecciona una especialidad válida`, e.target.parentElement);
-                Medico[e.target.name] = '';
-                confirmarMedico();
-                return;
+    // function validarEspecialidad(e){
+    //     // Validación específica para especialidad (select)  
+    //     if(e.target.value ===''){
+    //             mostrarAlerta2(`por favor selecciona una especialidad válida`, e.target.parentElement);
+    //             Medico[e.target.name] = '';
+    //             confirmarMedico();
+    //             return;
             
-        }
-        limpiarAlerta(e.target.parentElement);
-        //Asignar valores al objeto Medico
-        Medico[e.target.name] = e.target.value.trim().toLowerCase();
-        console.log(e.target.value);
-        confirmarMedico();        
-        }
+    //     }
+    //     limpiarAlerta(e.target.parentElement);
+    //     //Asignar valores al objeto Medico
+    //     Medico[e.target.name] = e.target.value.trim().toLowerCase();
+    //     console.log(e.target.value);
+    //     confirmarMedico();        
+    //     }
 
 
     //Crea función que crea la alerta de correcto
